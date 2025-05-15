@@ -53,5 +53,24 @@ Ejercicio 8:
     - La calculadora procesa los datos de los 3 radares
     - Devuelve posición exacta del barco (x,y) mediante UDP
   
-
+Ejercicio 9:
+  - Descripción
+    - Aplicación cliente-servidor para organizar un amigo invisible entre múltiples participantes mediante TCP.
+  
+  - Servidor
+    - Gestiona conexiones de clientes
+    - Asigna aleatoriamente los amigos
+    - Envía los resultados a cada participante
+  
+  - Clientes
+    - Los participantes que se conectan al servidor
+    - Cada uno envía su nombre y recibe su amigo asignado
+  
+  - Funcionamiento
+    - Los clientes se conectan al servidor (puerto 12345)
+    - Cada cliente envía su nombre después de un retardo aleatorio (5-10 seg)
+    - Tras 10 segundos, el servidor cierra conexiones y asigna amigos
+    - Cada participante recibe el siguiente en la lista como su amigo (cíclico)
+    - Cada cliente recibe el nombre de su amigo invisible
+    - El servidor se cierra automáticamente tras 10 segundos
 
