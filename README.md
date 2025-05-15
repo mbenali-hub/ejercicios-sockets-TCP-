@@ -84,7 +84,7 @@ Ejercicio 10:
     - Recibe números, calcula la media y la envía a todos
     - Si la diferencia entre la media y un número es 1, cierra el juego enviando "FIN"
   
-  Clientes
+  - Clientes
     - Se conectan al servidor y envían números aleatorios
     - Reciben la media y ajustan su siguiente número (mayor o menor según la media).
     - Finalizan al recibir "FIN"
