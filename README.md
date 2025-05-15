@@ -37,3 +37,21 @@ Ejercicio 7:
     - El servidor calcula la distancia euclidiana al premio (posición fija 4,4)
     - Cuando un jugador acierta (distancia=0), el juego termina para ese cliente
 Ejercicio 8:
+  - Descripción:
+    - Sistema distribuido para rastrear la posición de un barco usando 3 radares y cálculos de trilateración.
+  - Barco
+    - Simula movimiento y comunica posición a radares (puerto 2500)
+  - 3 Radares
+    - Calculan distancia al barco y envían datos a calculadora 
+  - Calculadora
+    - Determina posición exacta usando trilateración (puerto 7500)
+  - MarcoPolo
+    - Coordina el sistema y muestra resultados
+  
+  - Funcionamiento
+    - Cada radar envía sus coordenadas (x,y) a la caluladora mediante UDP, el barco y los radares se comunican mediante TCP
+    - La calculadora procesa los datos de los 3 radares
+    - Devuelve posición exacta del barco (x,y) mediante UDP
+  
+
+
