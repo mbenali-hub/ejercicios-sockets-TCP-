@@ -39,6 +39,7 @@ Ejercicio 7:
 Ejercicio 8:
   - Descripción:
     - Sistema distribuido para rastrear la posición de un barco usando 3 radares y cálculos de trilateración.
+    - Las comunicaciones estan cifradas con AES
   - Barco
     - Simula movimiento y comunica posición a radares (puerto 2500)
   - 3 Radares
@@ -73,4 +74,35 @@ Ejercicio 9:
     - Cada participante recibe el siguiente en la lista como su amigo (cíclico)
     - Cada cliente recibe el nombre de su amigo invisible
     - El servidor se cierra automáticamente tras 10 segundos
+      
+Ejercicio 10:
+  - Descripción:
+    - Aplicación cliente-servidor donde múltiples clientes envían números aleatorios a un servidor, que calcula la media y la devuelve. El juego termina cuando la diferencia entre la media y un número enviado es exactamente 1.
+    - Comunicaciones TCP
+  - Servidor
+    - Espera conexiones de clientes (hasta 5)
+    - Recibe números, calcula la media y la envía a todos
+    - Si la diferencia entre la media y un número es 1, cierra el juego enviando "FIN"
+  
+  Clientes
+    - Se conectan al servidor y envían números aleatorios
+    - Reciben la media y ajustan su siguiente número (mayor o menor según la media).
+    - Finalizan al recibir "FIN"
 
+Ejercicio 11:
+  - Descripción:
+    - Aplicación cliente-servidor que suma dos números largos (representados como cadenas) de forma distribuida. El servidor reparte las cifras entre múltiples hilos para calcular la suma parcialmente y luego combina los resultados.
+    - Comunicaciones mediante UDP
+  - Servidor
+    - Recibe dos números largos mediante UDP (puerto 12345)
+    - Crea un hilo principal (HiloSuma) para gestionar la suma
+    - El hilo principal divide las cifras de los números y las asigna a hilos secundarios (HiloSumaCifras)
+    - Cada hilo secundario suma un par de cifras y almacena el resultado
+    - Finalmente, el servidor combina todos los resultados parciales y muestra la suma total
+  - Clientes
+    - Envían dos números largos al servidor mediante UDP
+    - Cada número se envía como un paquete independiente
+  - Detalles técnicos
+    - Los números se procesan cifra a cifra, de derecha a izquierda
+    - El servidor maneja acarreos (llevado) para sumas parciales con resultados de más de una cifra
+    - La suma total se reconstruye invirtiendo el orden de los resultados parciales
