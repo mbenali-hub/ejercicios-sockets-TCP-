@@ -107,4 +107,34 @@ Ejercicio 11:
     - El servidor maneja acarreos (llevado) para sumas parciales con resultados de más de una cifra
     - La suma total se reconstruye invirtiendo el orden de los resultados parciales
 
-  
+Ejercicio cliente-servidor(SSL):
+  - Descripción
+    - Una implementación simple de una aplicación cliente-servidor que envia mensaje entre un cliente y un servidor a través de un socket seguro
+  - Servidor
+    - Carga el almacen de claves, crea el SSLServerSocket y se pone a la escucha de peticiones
+    - Recibe el mesnaje del cliente y responde con otro
+  - Cliente 
+    - Crea su SSLCoket y se conecta al servidor enviando un mensaje. Lee la respuesta
+
+Ejercicio mensajeriaEncriptadaAES:
+  - Descripción
+    - Aplicación cliente servidor que usa UDP como protocolo de comunicación
+    - Mensajería cifrada con una clave secreta que el cliente envía en su primer mensaje
+  - Servidor
+    - El servidor tiene en su posesion la clave privada con la que reconstruye la SecretKey
+    - Se crean un cifrador y un descifrador a partir de la clave secreta
+    - El servidor responde al cliente con un mensaje encriptado
+    - Espera respuesta del cliente
+  -Cliente
+    - El cliente tiene la clave pública, crea la SecretKey y la manda encriptada con la clave pública al servidor
+    - El servidor repsonde con un mensaje encriptado con esta clave secreta, el cliente lo desencripta
+    - Responde al servidor
+
+
+
+
+Ejercicio verificadorHash:
+  - Descripción
+    - Consta de dos procesos. El primero (GeneradorHash) genera un hash a partir de una cadena introducida por el usuario y guarda tanto la cadena y el hash en dos archivos.
+    - El segundo proceso (VerificadorDeHash) comprueba que el hash guardado y un nuevo hash generado a partir de la cadena guardada son inguales.
+
