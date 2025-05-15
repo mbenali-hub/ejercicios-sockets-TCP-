@@ -1,5 +1,5 @@
 Ejercicio 6:
-  - Descripción:
+  - Descripción
     - Juego multijugador en red donde los participantes buscan un premio oculto en un tablero de 10x10
     - El servidor indica a cada jugador qué tan cerca está del premio (frío/caliente)
     - Implementado usando sockets UDP en Java
@@ -21,7 +21,7 @@ Ejercicio 6:
     - Cuando un jugador encuentra el premio, recibe un mensaje de victoria
 
 Ejercicio 7:
-  - Descripción:
+  - Descripción
     - Versión automatizada del juego "Frío/Caliente" donde múltiples clientes buscan simultáneamente un premio en un tablero.
   - Servidor
     - Gestiona el tablero y calcula distancias
@@ -37,7 +37,7 @@ Ejercicio 7:
     - El servidor calcula la distancia euclidiana al premio (posición fija 4,4)
     - Cuando un jugador acierta (distancia=0), el juego termina para ese cliente
 Ejercicio 8:
-  - Descripción:
+  - Descripción
     - Sistema distribuido para rastrear la posición de un barco usando 3 radares y cálculos de trilateración.
     - Las comunicaciones estan cifradas con AES
   - Barco
@@ -76,7 +76,7 @@ Ejercicio 9:
     - El servidor se cierra automáticamente tras 10 segundos
       
 Ejercicio 10:
-  - Descripción:
+  - Descripción
     - Aplicación cliente-servidor donde múltiples clientes envían números aleatorios a un servidor, que calcula la media y la devuelve. El juego termina cuando la diferencia entre la media y un número enviado es exactamente 1.
     - Comunicaciones TCP
   - Servidor
@@ -90,7 +90,7 @@ Ejercicio 10:
     - Finalizan al recibir "FIN"
 
 Ejercicio 11:
-  - Descripción:
+  - Descripción
     - Aplicación cliente-servidor que suma dos números largos (representados como cadenas) de forma distribuida. El servidor reparte las cifras entre múltiples hilos para calcular la suma parcialmente y luego combina los resultados.
     - Comunicaciones mediante UDP
   - Servidor
@@ -106,3 +106,5 @@ Ejercicio 11:
     - Los números se procesan cifra a cifra, de derecha a izquierda
     - El servidor maneja acarreos (llevado) para sumas parciales con resultados de más de una cifra
     - La suma total se reconstruye invirtiendo el orden de los resultados parciales
+
+  
